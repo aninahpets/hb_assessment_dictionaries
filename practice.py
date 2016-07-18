@@ -31,6 +31,7 @@ def without_duplicates(words):
         >>> sorted(without_duplicates([111111, 2, 33333, 2]))
         [2, 33333, 111111]
     """
+    # Use "set math" to isolate unique values
     unique_words = set()
     for word in words:
         unique_words.add(word)
@@ -64,6 +65,7 @@ def find_unique_common_items(items1, items2):
         >>> sorted(find_unique_common_items(["2", "1", 2], [2, 1]))
         [2]
     """
+    # Use "set math" to isolate unique values
     first_set = set()
     second_set = set()
     for item in items1:
@@ -99,13 +101,13 @@ def get_sum_zero_pairs(numbers):
         >>> sort_pairs( get_sum_zero_pairs([1, 3, -1, 1, 1, 0]) )
         [[-1, 1], [0, 0]]
     """
+    # If any integer in a list is greater than zero, check to see if its
+    # negative counterpart is also in the list - if so, append both as a list.
     zero_pairs = []
     for i in set(numbers):
-        if i <= 0:
+        if i >= 0:
             if -i in numbers:
                 zero_pairs.append([i, -i])
-            elif i == 0:
-                zero_pairs.append([0, 0])
     return zero_pairs
 
 
@@ -133,6 +135,9 @@ def top_chars(phrase):
     Do not count spaces, but count all other characters.
 
     """
+    # I couldn't finish this problem. I initialized an empty dictionary and 
+    # got the keys and counts for each key, but couldn't work out how to sort
+    # on the values.
 
     chars = {}
     words = phrase.split()

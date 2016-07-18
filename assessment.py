@@ -28,6 +28,10 @@ def count_words(phrase):
         >>> print_dict(count_words("Porcupine see, porcupine do."))
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
     """
+    # Creating an empty dictionary to house the words once we've established
+    # which words are unique. Split the input string on whitespace and iterate
+    # over each word. Determine whether word exists in input dictionary - 
+    # if not, append the word, and if so, increment the value count by one.
     unique_words = {}
     words = phrase.split()
     for word in words:
@@ -54,6 +58,9 @@ def get_melon_price(melon_name):
         >>> get_melon_price('Tomato')
         'No price found'
     """
+    # Create a dictionary to store melon prices. Return the value for the 
+    # input key and return "No price found" if user calls the function without
+    # entering a valid melon key
     melons = {'Watermelon': 2.95, 'Cantaloupe': 2.50, 'Musk': 3.25,
     'Christmas': 14.25}
     return melons.get(melon_name, 'No price found')
@@ -74,6 +81,10 @@ def word_length_sorted(words):
         >>> word_length_sorted(["ok", "an", "apple", "a", "day"])
         [(1, ['a']), (2, ['an', 'ok']), (3, ['day']), (5, ['apple'])]
     """
+    # Create an empty dictionary to house word lengths as keys and lists of 
+    # words with corresponding wordcounts as values. Sort the input list and
+    # check to see if the wordcount is in the dictionary. If not, add it; if
+    # yes, add the word to the list of values.
     lengths_and_words = {}
     words.sort()
     for word in words:
@@ -123,11 +134,16 @@ def translate_to_pirate_talk(phrase):
         >>> translate_to_pirate_talk("my student is not a man!")
         'me swabbie be not a man!'
     """
+    # Create a dictionary with pirate translations of English words.
     pirate_translations = {'sir': 'matey', 'hotel': 'fleabag inn',
     'student': 'swabbie', 'man': 'matey', 'professor': 'foul blaggart',
     'restaurant': 'galley', 'your': 'yer', 'excuse': 'arr',
     'students': 'swabbies', 'are': 'be', 'restroom': 'head', 'my': 'me',
     'is': 'be'}
+
+    # Initialize empty piratized string. Split phrase - if the phrase has a
+    # value already, add a space and the "piratized" word utilizing the
+    # dictionary value; if not, add the "piratized" value to the string.
     
     pirate_phrase = ""
     phrase = phrase.split()
@@ -178,7 +194,16 @@ def kids_game(names):
     good solutions here will definitely require a dictionary.
     """
 
-    return []
+    # Couldn't complete this - my idea was to loop through the list but I think
+    # I need to use a while loop, and I couldn't figure out "while what"
+    final_names = [names[0]]
+    for name in names:
+        if name in final_names:
+            continue
+        if final_names[-1][-1] == name[0]:
+            final_names.append(name)
+
+    return final_names
 
 #####################################################################
 # You can ignore everything below this.
